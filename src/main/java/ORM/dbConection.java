@@ -11,17 +11,15 @@ public class dbConection {
 
 	public static Connection getConnection() throws Exception {
 
-	System.out.println("getConnection");
+        /*Este info se debe leer desde un archovi de configuracion*/
         String url = "jdbc:mysql://localhost:3306/";
         String dbName = "orm";
         String driver = "com.mysql.jdbc.Driver";
         String userName = "adminAndres";
         String password = "Andres300594";
 
-        System.out.println("before jdbc");
         Class.forName("com.mysql.jdbc.Driver").newInstance();
         Connection conn;
-        System.out.println("after jdbc");
         try {
 
             conn = DriverManager.getConnection(url + dbName, userName,password);
